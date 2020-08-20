@@ -1,0 +1,52 @@
+{
+  "name": "team-1474-backend",
+  "version": "1.0.0",
+  "description": "[![Codacy Badge](https://api.codacy.com/project/badge/Grade/076a5f106c6d430fb3b6f49f762bb39d)](https://app.codacy.com/gh/BuildForSDGCohort2/team-1474-backend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDGCohort2/team-1474-backend&utm_campaign=Badge_Grade_Dashboard)",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run db-migrate:test && jest --coverage",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "db-migrate": "sequelize db:migrate --env production",
+    "db-migrate:dev": "sequelize db:migrate --env development",
+    "db-seeder:dev": "sequelize db:seed:all --env development",
+    "db-seeder:test": "sequelize db:seed:all --env test",
+    "db-delete:dev": "sequelize db:migrate:undo:all --env development",
+    "db-migrate:test": "sequelize db:migrate:undo:all --env test && sequelize db:migrate --env test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuildForSDGCohort2/team-1474-backend.git"
+  },
+  "author": "lemoisson metre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuildForSDGCohort2/team-1474-backend/issues"
+  },
+  "homepage": "https://github.com/BuildForSDGCohort2/team-1474-backend#readme",
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/register": "^7.10.5",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.4.0",
+    "express": "^4.17.1",
+    "jest": "^26.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.3.0",
+    "regenerator-runtime": "^0.13.7",
+    "sequelize": "^6.3.3",
+    "sequelize-cli": "^6.2.0",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "husky": "^4.2.5",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}
